@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <h1>Transaction</h1>
+
+    <table class="table">
+        <tr>
+            <th scope='col'>ID</th>
+            <th scope='col'>Type</th>
+            <th scope='col'>Date</th>
+            <th scope='col'>Category</th>
+            <th scope='col'>Description</th>
+            <th scope='col'>Amount</th>   
+            <th scope='col'>Payment Method</th> 
+            <th scope='col'></th>                                
+        </tr>
+        {% for transaction in budget %}
+            <tr scope="row">
+                <td>{{transaction.id}}</td>
+                <td>{{transaction.transaction_type}}</td>
+                <td>{{transaction.transaction_date}}</td>
+                <td>{{transaction.category}}</td>
+                <td>{{transaction.description}}</td>
+                <td>{{transaction.amount}}</td>
+                <td>{{transaction.payment_method}}</td>
+                <td><a href="">Edit</a></td>
+                <td><a href="">Delete</a></td>
+                <td><a href="">View</a></td>
+                <td></td>
+            </tr>                
+        {% endfor %}
+    </table>
+{% endblock content %}
